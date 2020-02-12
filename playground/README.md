@@ -1,6 +1,7 @@
 learn the basics of cmake
 
-based on [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
+* based on [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
+* [cmake-commands](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html)
 
 see [CMakeLists.txt](CMakeLists.txt)
 

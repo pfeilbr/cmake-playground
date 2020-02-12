@@ -13,6 +13,14 @@ set(MY_LIST2 "one;two")
 message("MY_VARIABLE is ${MY_VARIABLE}")
 message("MY_LIST is ${MY_LIST}")
 
+# if
+set(DO_WORK true)
+if(DO_WORK)
+  message("doing work ... DO_WORK = ${DO_WORK}")
+else()
+    message("not doing work ...")
+endif()
+
 # function
 function(get_message MESSAGE)
     message( "MESSAGE is ${MESSAGE}, followed by ${ARGV}")
