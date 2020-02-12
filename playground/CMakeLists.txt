@@ -36,6 +36,7 @@ message("MESSAGE: ${MESSAGE}")
 find_package(Git QUIET)
 message("GIT_EXECUTABLE: ${GIT_EXECUTABLE}")
 
+# find program
 find_program(PROGRAM NAMES curl)
 message("PROGRAM: ${PROGRAM}")
 
@@ -53,3 +54,18 @@ list(GET FILES 0 FILE_PATH)
 message("FILE_PATH: ${FILE_PATH}")
 get_filename_component(DIR ${FILE_PATH} DIRECTORY)
 message("DIR: ${DIR}")
+
+# execute process
+execute_process(COMMAND ls
+                OUTPUT_VARIABLE LS_OUTPUT
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+message("LS_OUTPUT: ${LS_OUTPUT}")
+
+# convert newline delimited values to a list "item1;item2;..."
+string(REGEX REPLACE "\n" ";" LS_OUTPUT "${LS_OUTPUT}")
+
+# loop over list
+foreach(FILE ${LS_OUTPUT})
+    message("FILE: ${FILE}")
+endforeach()
